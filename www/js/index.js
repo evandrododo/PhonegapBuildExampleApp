@@ -16,6 +16,134 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+
+var GOOGLE_PROJECT_ID = "47811378595";
+var PUSHAPPS_APP_TOKEN = "1a3267ab-aa11-4bb2-8dda-034b3a6566ee";
+
+/**
+ * Register current device with PushApps
+ */
+function registerDevice() {
+	PushNotification.registerDevice(GOOGLE_PROJECT_ID, PUSHAPPS_APP_TOKEN, function (pushToken) {
+                                    alert('registerDevice, push token' + pushToken);
+                                    }, function (error) {
+                                    alert(error);
+                                    });
+	
+	document.removeEventListener('pushapps.message-received');
+	document.addEventListener('pushapps.message-received', function(event) {
+                              var notification = event.notification;
+                              
+                              var devicePlatform = device.platform;
+                              if (devicePlatform === "iOS") {
+                              
+                              alert("message-received, Message: " + notification.aps.alert + " , D: " + notification.D);
+                              } else {
+                              alert("message-received, Message: " + notification.Message + " , Title: " + notification.Title + " , D: " + notification.D);
+                              }
+                              });
+    
+}
+
+/**
+ * Unregister current device with PushApps
+ */
+function unregisterDevice() {
+	document.removeEventListener('pushapps.message-received');
+	PushNotification.unRegisterDevice(function () {
+                                      alert("Your device was unregistered from PushApps");
+                                      }, function () {
+                                      console.log("error");
+                                      alert("Error unregistering your device");
+                                      });
+}
+
+/**
+ * Send boolean tag
+ */
+function sendBooleanTag() {
+	var d = document.getElementById('booleanTagInput').value === "on" ? "true" : "false";
+	var iden = document.getElementById('booleanIdentifierTagInput').value;
+    
+    PushNotification.setTags([{
+                              identifier: iden,
+                              value: d
+                              }], function () {
+                             alert("Your tag was successfully added");
+                             }, function (message) {
+                             alert("ERROR: " + message);
+                             });
+}
+
+/**
+ * Send number tag
+ */
+function sendNumberTag() {
+	var d = document.getElementById("numberTagInput").value;
+	var iden = document.getElementById('numberIdentifierTagInput').value;
+    
+    PushNotification.setTags([{
+                              identifier: iden,
+                              value: d
+                              }], function () {
+                             alert("Your tag was successfully added");
+                             }, function (message) {
+                             alert("ERROR: " + message);
+                             });
+}
+
+/**
+ * Send string tag
+ */
+function sendStringTag() {
+	var d = document.getElementById("stringTagInput").value;
+	var iden = document.getElementById('stringIdentifierTagInput').value;
+    
+    PushNotification.setTags([{
+                              identifier: iden,
+                              value: d
+                              }], function () {
+                             alert("Your tag was successfully added");
+                             }, function (message) {
+                             alert("ERROR: " + message);
+                             });
+}
+
+/**
+ * Send date tag
+ */
+function sendDateTag() {
+	var d = new Date(document.getElementById("dateTagInput").value);
+    var n = d.toISOString();
+    var iden = document.getElementById('dateIdentifierTagInput').value;
+    
+    PushNotification.setTags([{
+                              identifier: iden,
+                              value: n
+                              }], function () {
+                             alert("Your tag was successfully added");
+                             }, function (message) {
+                             alert("ERROR: " + message);
+                             });
+}
+
+function removeTag() {
+	var idens = [ document.getElementById('identifierRemoveTagInput').value ];
+	PushNotification.removeTags(idens, function () {
+                                alert("Tag removed successfully");
+                                }, function (message) {
+                                alert("ERROR: " + message);
+                                });
+}
+
+function getDeviceId() {
+    PushNotification.getDeviceId(function (deviceId) {
+                                 alert("Your device id is: " + deviceId);
+                                 }, function () {
+                                 alert("We could not get your device id. Please check your logs or contact our support team");
+                                 })
+}
+
 var app = {
     // Application Constructor
     initialize: function() {
@@ -44,6 +172,6 @@ var app = {
         listeningElement.setAttribute('style', 'display:none;');
         receivedElement.setAttribute('style', 'display:block;');
 
-        console.log('Received Event: ' + id);
+        registerDevice();
     }
 };
