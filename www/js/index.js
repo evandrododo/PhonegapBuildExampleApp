@@ -16,9 +16,11 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-
+/*
 var GOOGLE_PROJECT_ID = "47811378595";
-var PUSHAPPS_APP_TOKEN = "1a3267ab-aa11-4bb2-8dda-034b3a6566ee";
+var PUSHAPPS_APP_TOKEN = "1a3267ab-aa11-4bb2-8dda-034b3a6566ee";*/
+var GOOGLE_PROJECT_ID = "528709143579";
+var PUSHAPPS_APP_TOKEN = "126227a6-cf78-445d-b875-36d24550bbaf";
 
 /**
  * Register current device with PushApps
