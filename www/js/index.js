@@ -27,7 +27,7 @@ var PUSHAPPS_APP_TOKEN = "eef421f8-a4ad-4fd0-91b8-6dd84bc5d187";
  */
 function registerDevice() {
 	PushNotification.registerDevice(GOOGLE_PROJECT_ID, PUSHAPPS_APP_TOKEN, function (pushToken) {
-                                    alert('registerDevice, push token' + pushToken);
+                                    document.getElementById("div1").innerHTML = pushToken;
                                     }, function (error) {
                                     alert(error);
                                     });
