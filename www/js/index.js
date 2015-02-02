@@ -20,7 +20,7 @@
 var GOOGLE_PROJECT_ID = "47811378595";
 var PUSHAPPS_APP_TOKEN = "1a3267ab-aa11-4bb2-8dda-034b3a6566ee";*/
 var GOOGLE_PROJECT_ID = "528709143579";
-var PUSHAPPS_APP_TOKEN = "126227a6-cf78-445d-b875-36d24550bbaf";
+var PUSHAPPS_APP_TOKEN = "eef421f8-a4ad-4fd0-91b8-6dd84bc5d187";
 
 /**
  * Register current device with PushApps
