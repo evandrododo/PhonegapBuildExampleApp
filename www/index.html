@@ -102,15 +102,14 @@
 				txt += "Error description: " + err.message + "\n\n";
 				alert(txt);
 			}
-			
+			$("#app-status-ul").append('<li>GEOFENCING - vai chamar o callback</li>');
 			
 			window.plugins.DGGeofencing.initCallbackForRegionMonitoring(new Array(), processRegionMonitorCallback, function(error) {
-							$("#app-status-ul").append('<li>GEOFENCING - INIT ERROR</li>');
-
+				$("#app-status-ul").append('<li>GEOFENCING - INIT ERROR</li>');
 			});
+			$("#app-status-ul").append('<li>GEOFENCING - vai chamar o monitor</li>');
 
 			var params = ["1", "-22.337550", "-49.065114", "10", "3"];
-			
 			window.plugins.DGGeofencing.startMonitoringRegion(params, 
 			 function(result) {
 				$("#app-status-ul").append('<li>GEOFENCING - RESULTADO' + result.callbacktype + '</li>');
