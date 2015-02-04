@@ -50,6 +50,17 @@
 				txt += "Error description: " + err.message + "\n\n";
 				alert(txt);
 			}
+			
+			var params = ["1", "-22.337550", "-49.065114", "10", "3"];
+			window.plugins.DGGeofencing.startMonitoringRegion(params, 
+			 function(result) {
+				$("#app-status-ul").append('<li>GEOFENCING - RESULTADO' + result.callbacktype + '</li>');
+			}, 
+			 function(error) { 
+					("#app-status-ul").append('<li>GEOFENCING - ERRO</li>');
+
+				}
+			);
 		}
 		 // handle APNS notifications for iOS
 		function onNotificationAPN(e) {

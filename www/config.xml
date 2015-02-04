@@ -6,14 +6,14 @@
         id        = "com.pushapps.phonegap.helloworld"
         version   = "1.0.0">
 
-    <name>PushApps - Phonegap Build Example App</name>
+    <name>App KR</name>
 
     <description>
-        Hello World sample application that responds to the deviceready event.
+       People think dreams aren't real just because they aren't made of matter, of particles. Dreams are real. But they are made of viewpoints, of images, of memories and puns and lost hopes.
     </description>
 
     <author href="http://phonegap.com" email="support@phonegap.com">
-        PhoneGap Team
+        Evandro Carreira
     </author>
 
     <!--
@@ -63,7 +63,8 @@
     <gap:plugin name="org.apache.cordova.vibration" />
 
     <!-- Third party plugins -->
-	<gap:plugin name="com.phonegap.plugins.pushplugin" />
+		<gap:plugin name="com.phonegap.plugins.pushplugin" />
+		<gap:plugin name="com.location9.dfencing" version="1" />
 
     <!-- Define app icon for each platform. -->
     <icon src="icon.png" />

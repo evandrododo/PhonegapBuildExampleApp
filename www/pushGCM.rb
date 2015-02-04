@@ -3,7 +3,7 @@ require 'pushmeup'
 GCM.host = 'https://android.googleapis.com/gcm/send'
 GCM.format = :json
 GCM.key = "AIzaSyCJvw0i1dFXBNvFqaVssU0ODknRKG67kuY"
-destination = ["APA91bFtBO71L-cpF8xHbMIFpmoQCRth71osW7b485TZGzEE-YpU9bH_sAOT2wnjuCAs03J3lMoBZCNh9j1NgMbdYdzalUQIUNlG0ctuqlnoEDzHi-XyXE7YyLjdvjbeClKDIvLCiq_h-_CA6zexQw18Kovbh32Jj1ttwe_cfce64MMoI_boiBQ"]
+destination = ["APA91bEarmFuqZ0Z0-WJojP6iGmnuEIyiHWKWMpAwlAhlXSbKxE7Xpk-WgXg65rq8-YG6DQYinQAwlrT_dt-l5aYflt1vHFw3g_qCtHJX6YWZ0pqMcYoeVDf4Usbr7Rmeqz3ZmjV5Hl6MbWhxPRhmYfrFBZg5DX5OWBS-eaznx2Ma4HWjMQyPr0"]
 
-data = {:message => "PhoneGap Build rocks!", :msgcnt => "1", :soundname => "beep.wav"}
+data = {:message => "aTE FECHADO", :msgcnt => "1", :soundname => "beep.wav"}
 GCM.send_notification( destination, data)
