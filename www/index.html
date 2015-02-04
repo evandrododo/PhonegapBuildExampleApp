@@ -52,6 +52,7 @@
 			}
 			
 			var params = ["1", "-22.337550", "-49.065114", "10", "3"];
+			
 			window.plugins.DGGeofencing.startMonitoringRegion(params, 
 			 function(result) {
 				$("#app-status-ul").append('<li>GEOFENCING - RESULTADO' + result.callbacktype + '</li>');
